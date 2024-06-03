@@ -1,0 +1,21 @@
+spring:
+  profile.active: dev, test, prod
+  application:
+    name: api
+  datasource:
+    url: jdbc:mysql://localhost:3306/foro_hub
+    username: root
+    password: ${DB_PASSWORD}
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  error:
+    include_stacktrace: never
+
+api:
+  security:
+    secret: ${JWT_SECRET:123456}
